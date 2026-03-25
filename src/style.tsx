@@ -5,23 +5,6 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#f3f4f6",
     },
-    hero: {
-        width: "100%",
-        maxWidth: 520,
-        borderRadius: 18,
-        padding: 18,
-        gap: 6,
-        borderWidth: 1,
-        borderColor: "rgba(103, 96, 96, 0.1)",
-    },
-    heroText: {
-        fontSize: 28,
-        fontWeight: "800",
-        textAlign: "center",
-        color: "white",
-        letterSpacing: 0.3,
-        backgroundColor: "#A8DCD9",
-    },
     menu: {
         backgroundColor: "#f3f4f6",
         alignItems: "center",
