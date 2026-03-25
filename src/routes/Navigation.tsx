@@ -15,7 +15,7 @@ export default function Navigation() {
 return(
 
 <NavigationContainer>
-  <Stack.Navigator initialRouteName = "Home" >
+  <Stack.Navigator initialRouteName = "Home" screenOptions={{headerStyle: {backgroundColor: '#539091', }, headerTintColor: '#ffffff',headerTitleStyle: {fontWeight: 'bold', },}}>
     <Stack.Screen name="Home" component={Home} options={{ title: 'Página Inicial' }} />
     <Stack.Screen name="Cinema" component={Cinema} options={{ title: 'Cinema' }}/>
     <Stack.Screen name="Lojas" component={Lojas} options={{ title: 'Lojas' }}/>
