@@ -1,42 +1,42 @@
-import React, { useState } from 'react';
-import { View, Text, Pressable, ScrollView } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { MaterialIcons } from '@expo/vector-icons';
+import React from 'react';
+import { View, Text, FlatList, Pressable, ScrollView ,} from 'react-native';
 import { styles } from '../style';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
-export default function Home(){
-    const navigation = useNavigation();
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+const MUSICS = [
+    { id: "1", song: "My own summer" ,band : "Deftones",album: "Around the fur", image:""},
+    { id: "2", song: "Points Of Authority" ,band : "Linkin Park",album: "Hybrid Theory", image:""},
+    { id: "3", song: "White Rabbit" ,band : "Egypt Central",album: "White Rabbit", image:""},
+    { id: "4", song: "Throne" ,band : "Bring Me The Horozion",album: "That's the Spirit.", image:""},
+    { id: "5", song: "You're Going Down" ,band : "Sick Puppies",album: "Tri-Polar", image:""},
+];
 
-    const menuItems = [
-        { title: 'Cinema', screen: 'Cinema', icon: 'local-movies' as const },
-        { title: 'Lojas', screen: 'Lojas', icon: 'storefront' as const },
-        { title: 'Restaurantes', screen: 'Restaurantes', icon: 'restaurant' as const },
-        { title: 'Promoções', screen: 'Promocoes', icon: 'local-offer' as const },
-        { title: 'Mapa do Shopping', screen: 'Mapa_shopping', icon: 'map' as const },
-    ];
+export function Home() {
+
+    const renderItem = ({ item }: { item: { title: string } }) => (
+        <Pressable 
+            onPress={() => alert(item.title)} 
+            style={styles.item}
+        >
+            <Text style={styles.text}>{item.title}</Text>
+        </Pressable>
+    );
 
     return (
-        <ScrollView style={styles.scroll}>
-
-            <View style={styles.menu}>
-                {menuItems.map((item, index) => (
-                    <Pressable
-                        key={index}
-                        style={({ pressed }) => [
-                            styles.menuBtn,
-                            (hoveredIndex === index || pressed) && styles.menuBtnHover,
-                        ]}
-                        onHoverIn={() => setHoveredIndex(index)}
-                        onHoverOut={() => setHoveredIndex(null)}
-                        onPress={() => navigation.navigate(item.screen as never)}
-                    >
-                        <MaterialIcons name={item.icon} size={22} style={styles.menuLabel} />
-                        <Text style={styles.menuTxt}>{item.title}</Text>
-                    </Pressable>
-                ))}
-            </View>
+    <SafeAreaProvider>
+   <SafeAreaView style={styles.scroll}>
+    <ScrollView>
+        <View style={styles.container}>
+            <FlatList
+                numColumns={1}
+                style={styles.lista}
+                data={DATA}
+                keyExtractor={(item) => item.id}
+                renderItem={renderItem}
+            />
+        </View>
         </ScrollView>
+        </SafeAreaView>
+        </SafeAreaProvider>
     );
 }
-    
