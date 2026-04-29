@@ -1,10 +1,9 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import Navigation from "./src/routes/Navigation";
+import { Home } from './src/screens/Home';
 
 export default function App() {
   return (
-      <Navigation />
+      <Home/>
   );
 }
 

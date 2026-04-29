@@ -1,6 +1,85 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#121212",
+        paddingHorizontal: 16,
+        paddingVertical: 20,
+        alignItems: "center",
+    },
+    title: {
+        color: "#ffffff",
+        fontSize: 24,
+        fontWeight: "700",
+        marginBottom: 10,
+        textAlign: "center",
+    },
+    infoBox: {
+        width: "100%",
+        maxWidth: 480,
+        backgroundColor: "#1db954",
+        borderRadius: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 12,
+        marginBottom: 12,
+        alignItems: "center",
+    },
+    infoTitle: {
+        color: "#121212",
+        fontSize: 15,
+        fontWeight: "700",
+        textAlign: "center",
+    },
+    infoText: {
+        color: "#121212",
+        fontSize: 13,
+        marginTop: 2,
+        textAlign: "center",
+    },
+    lista: {
+        width: "100%",
+        maxWidth: 520,
+    },
+    listaContent: {
+        alignItems: "center",
+    },
+    trackRow: {
+        backgroundColor: "#1f1f1f",
+        borderRadius: 10,
+        padding: 10,
+        marginBottom: 10,
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+        maxWidth: 480,
+        height: 80,
+    },
+    cover: {
+        width: 56,
+        height: 56,
+        borderRadius: 6,
+    },
+    trackInfo: {
+        marginLeft: 12,
+        width: 300,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    trackName: {
+        color: "#ffffff",
+        fontSize: 16,
+        fontWeight: "600",
+        textAlign: "center",
+        width: "100%",
+    },
+    trackMeta: {
+        color: "#b3b3b3",
+        fontSize: 13,
+        marginTop: 2,
+        textAlign: "center",
+        width: "100%",
+    },
     scroll: {
         flex: 1,
         backgroundColor: "#f3f4f6",
